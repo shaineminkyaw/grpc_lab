@@ -16,7 +16,7 @@ type DataSource struct {
 
 var Login_DB *gorm.DB
 
-func UserConnectDB() *DataSource {
+func LoginConnectDB() *DataSource {
 	//
 	conf := config.Init()
 	host := conf.Host

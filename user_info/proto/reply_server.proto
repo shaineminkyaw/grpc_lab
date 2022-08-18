@@ -21,6 +21,6 @@ message AllIDRequest {
     repeated LoginServerRequest all_id=1;
 }
 
-message AllIDResponse {
-    repeated ResponseToLoginServer result=1;
-}
+// message AllIDResponse {
+//     repeated ResponseToLoginServer result=1;
+// }

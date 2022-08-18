@@ -39,7 +39,7 @@ func RunUserGrpcServer() {
 
 	grpcServer := grpc.NewServer()
 
-	pb.RegisterUserServiceServer(grpcServer, souce_server)
+	pb.RegisterUserServiceServer(grpcServer, souce_server.UnimplementedUserServiceServer)
 	reflection.Register(grpcServer)
 
 	lis, err := net.Listen("tcp", config.GRPC.AuthGrpc)

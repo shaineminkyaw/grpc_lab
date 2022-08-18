@@ -69,7 +69,7 @@ func (c *userServiceClient) FilterUserFromLoginserver(ctx context.Context, in *A
 }
 
 type UserService_FilterUserFromLoginserverClient interface {
-	Recv() (*AllIDResponse, error)
+	Recv() (*ResponseToLoginServer, error)
 	grpc.ClientStream
 }
 
@@ -77,8 +77,8 @@ type userServiceFilterUserFromLoginserverClient struct {
 	grpc.ClientStream
 }
 
-func (x *userServiceFilterUserFromLoginserverClient) Recv() (*AllIDResponse, error) {
-	m := new(AllIDResponse)
+func (x *userServiceFilterUserFromLoginserverClient) Recv() (*ResponseToLoginServer, error) {
+	m := new(ResponseToLoginServer)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
@@ -166,7 +166,7 @@ func _UserService_FilterUserFromLoginserver_Handler(srv interface{}, stream grpc
 }
 
 type UserService_FilterUserFromLoginserverServer interface {
-	Send(*AllIDResponse) error
+	Send(*ResponseToLoginServer) error
 	grpc.ServerStream
 }
 
@@ -174,7 +174,7 @@ type userServiceFilterUserFromLoginserverServer struct {
 	grpc.ServerStream
 }
 
-func (x *userServiceFilterUserFromLoginserverServer) Send(m *AllIDResponse) error {
+func (x *userServiceFilterUserFromLoginserverServer) Send(m *ResponseToLoginServer) error {
 	return x.ServerStream.SendMsg(m)
 }
 

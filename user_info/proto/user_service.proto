@@ -20,5 +20,5 @@ option go_package = "github.com/shaineminkyaw/grpc_lab/user_info/pb";
 service UserService {
     rpc CreateUser(UserRequest) returns (UserResponse) {};
     rpc GetCode(VerifyCodeRequest) returns (CodeResponse) {};
-    rpc FilterUserFromLoginserver(AllIDRequest) returns (stream AllIDResponse) {};
+    rpc FilterUserFromLoginserver(AllIDRequest) returns (stream ResponseToLoginServer) {};
 }
