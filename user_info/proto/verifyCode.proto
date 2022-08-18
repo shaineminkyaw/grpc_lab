@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+
+
+package user_info;
+
+option go_package = "github.com/shaineminkyaw/grpc_lab/user_info/pb";
+
+
+message VerifyCodeRequest {
+    string email =1;
+}
+
+message CodeResponse {
+    string code =1;
+}
+

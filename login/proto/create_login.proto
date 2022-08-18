@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+
+package login;
+
+option go_package = "github.com/shaineminkyaw/grpc_lab/login/pb";
+
+
+message RequestID {
+    uint64 id =1;
+}
+
+message ResponseToken {
+    string token =1;
+}
+
+
+
+
+message LoginRequest {
+    repeated RequestID request_id=1;
+}
+
+
+message LoginResponse {
+    repeated ResponseToken all_token =1;
+}
+

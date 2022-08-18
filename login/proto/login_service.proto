@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+
+package login;
+
+import "create_login.proto";
+
+option go_package = "github.com/shaineminkyaw/grpc_lab/login/pb";
+
+
+service LoginService {
+    rpc Login(LoginRequest) returns (stream LoginResponse) {};
+}
